@@ -122,5 +122,9 @@ questions.forEach((q,i)=>q.querySelectorAll('.option').forEach(opt=>opt.addEvent
 next.addEventListener('click',()=>{if(step===1&&!data.type)return;if(step===2&&!data.count)return;if(step===3){const v=phone.value.replace(/\D/g,'').replace(/^۹/,'9').replace(/[۰-۹]/g,d=>'۰۱۲۳۴۵۶۷۸۹'.indexOf(d)).replace(/^0/,'0');if(!/^09\d{9}$/.test(v)){phoneError.style.display='block';return}phoneError.style.display='none';data.phone=v;step=4;update();return}if(step<3){step++;update();}});back.addEventListener('click',()=>{if(step>1&&step<4){step--;update();}});
 phone.addEventListener('input',()=>{phoneError.style.display='none'});
 </script>
+<script>
+  window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+</script>
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </body>
 </html>
